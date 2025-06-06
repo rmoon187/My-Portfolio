@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Hero from "./sections/Hero";
 import Showcase from "./sections/Showcase";
 import FeatureCard from "./sections/FeatureCard";
@@ -9,6 +9,10 @@ import NightSky from "./threebg/NightSky";
 
 
 function App() {
+
+  const contactRef = useRef(null);
+  const showcaseRef = useRef(null);
+
   return (
     <div className="relative min-h-screen overflow-x-hidden overflow-y-auto">
     {/* Background 3D Canvas */}
@@ -19,11 +23,15 @@ function App() {
     {/* Foreground Website UI */}
     <div className="relative z-10">
       {/* <Navbar /> */}
-      <Hero/>
-      <Showcase/>
+      <Hero contactRef={contactRef} showcaseRef={showcaseRef} />
+      <div ref={showcaseRef}>
+        <Showcase />
+      </div>
       <FeatureCard/>
       <TechStack/>
-      <Contact/>
+       <div ref={contactRef}>
+        <Contact />
+      </div>
       <Footer/>
       {/* Add other components here */}
     </div>

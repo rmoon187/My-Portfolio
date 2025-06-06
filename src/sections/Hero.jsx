@@ -6,12 +6,15 @@ import "./styles/hero.css"; // Create this CSS file for additional styles
 
 gsap.registerPlugin(TextPlugin);
 
-const Hero = () => {
+const Hero = ({ contactRef, showcaseRef }) => {
   const nameRef = useRef(null);
   const detailsRef = useRef(null);
   const imageRef = useRef(null);
   const heroRef = useRef(null);
   const cursorRef = useRef(null);
+
+  
+  
 
   useEffect(() => {
     // Name animation
@@ -20,7 +23,7 @@ const Hero = () => {
       { opacity: 0, y: 50 },
       { duration: 1.5, opacity: 1, y: 0, ease: "power3.out" }
     );
-  
+
     // Rotating details text with cursor
     const details = [
       "MERN Stack Developer",
@@ -28,11 +31,11 @@ const Hero = () => {
       "React Specialist",
       "Node.js Backend Developer",
       "MongoDB Expert",
-      "JavaScript Enthusiast"
+      "JavaScript Enthusiast",
     ];
-  
+
     let currentIndex = 0;
-  
+
     const animateText = () => {
       // Blink cursor animation
       gsap.to(cursorRef.current, {
@@ -42,7 +45,7 @@ const Hero = () => {
         yoyo: true,
         onComplete: () => {
           gsap.set(cursorRef.current, { opacity: 1 });
-          
+
           // Text typing animation
           gsap.to(detailsRef.current, {
             duration: 2, // Increased duration for slower typing
@@ -67,18 +70,18 @@ const Hero = () => {
                     onComplete: () => {
                       currentIndex = (currentIndex + 1) % details.length;
                       animateText();
-                    }
+                    },
                   });
-                }
+                },
               });
-            }
+            },
           });
-        }
+        },
       });
     };
-  
+
     animateText();
-  
+
     // Image entrance animation
     gsap.fromTo(
       imageRef.current,
@@ -96,12 +99,12 @@ const Hero = () => {
             y: 20,
             repeat: -1,
             yoyo: true,
-            ease: "sine.inOut"
+            ease: "sine.inOut",
           });
-        }
+        },
       }
     );
-  
+
     // Background elements animation
     gsap.from(".hero-bg-element", {
       duration: 2,
@@ -109,40 +112,42 @@ const Hero = () => {
       stagger: 0.2,
       ease: "sine.inOut",
     });
-  
+
     // Particle animation
     const particles = document.querySelectorAll(".particle");
-    particles.forEach(particle => {
+    particles.forEach((particle) => {
       const size = Math.random() * 10 + 5;
       const duration = Math.random() * 4 + 3;
-  
+
       gsap.set(particle, {
         width: size,
         height: size,
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
       });
-  
+
       gsap.to(particle, {
         x: "+=100",
         y: "+=50",
         duration: duration,
         repeat: -1,
         yoyo: true,
-        ease: "sine.inOut"
+        ease: "sine.inOut",
       });
     });
-  
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" ref={heroRef}
-     >
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      ref={heroRef}
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className="particle absolute rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-10 blur-sm"
           />
         ))}
@@ -159,8 +164,8 @@ const Hero = () => {
               <span className="text-lg md:text-xl font-medium text-purple-400 mb-2 block">
                 Hello, I'm
               </span>
-              <h1 
-                ref={nameRef} 
+              <h1
+                ref={nameRef}
                 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-600 mb-4"
               >
                 Rabiul Hasan Moon
@@ -178,15 +183,16 @@ const Hero = () => {
             </div>
 
             <p className="text-gray-400 text-lg mb-8 max-w-lg">
-              Crafting exceptional digital experiences with modern web technologies. 
-              Specializing in building scalable, performant full-stack applications.
+              Crafting exceptional digital experiences with modern web
+              technologies. Specializing in building scalable, performant
+              full-stack applications.
             </p>
 
             <div className="flex gap-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1">
+              <button onClick={() => showcaseRef.current.scrollIntoView({ behavior: 'smooth' })}  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1">
                 View Projects
               </button>
-              <button className="px-8 py-3 border border-purple-400 rounded-lg font-medium text-purple-400 hover:bg-purple-900/50 transition-all duration-300">
+              <button onClick={() => contactRef.current.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3 border border-purple-400 rounded-lg font-medium text-purple-400 hover:bg-purple-900/50 transition-all duration-300">
                 Contact Me
               </button>
             </div>
@@ -212,20 +218,24 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl opacity-70 blur-xl"></div>
               <div className="relative overflow-hidden rounded-2xl border-2 border-purple-500/20">
-                <img 
+                <img
                   ref={imageRef}
                   className="w-full max-w-md object-cover transform transition-all hover:scale-105 duration-500"
-                  src={img} 
-                  alt="Rabiul Hasan - MERN Stack Developer" 
+                  src={img}
+                  alt="Rabiul Hasan - MERN Stack Developer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  <span className="inline-block px-4 py-2 bg-purple-600/80 backdrop-blur-sm rounded-full text-white font-medium">
+                  <span className="inline-flex items-center px-4 py-2 bg-purple-600/80 backdrop-blur-sm rounded-full text-white font-medium">
+                    <span className="relative flex h-3 w-3 mr-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
                     Available for work
                   </span>
                 </div>
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 z-0"></div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 z-0"></div>
