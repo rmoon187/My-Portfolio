@@ -94,25 +94,7 @@ const TechStack = () => {
     }, []);
 
     return (
-        <div id='skills' className="relative section-padding overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(30)].map((_, i) => (
-                    <div 
-                        key={i}
-                        className="absolute rounded-full bg-white/80"
-                        style={{
-                            width: `${Math.random() * 3 + 1}px`,
-                            height: `${Math.random() * 3 + 1}px`,
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            opacity: Math.random() * 0.5 + 0.1,
-                            animation: `twinkle ${Math.random() * 4 + 3}s infinite alternate`
-                        }}
-                    />
-                ))}
-            </div>
-            
+        <div id='skills' className="relative section-padding overflow-hidden">                    
             <div className="relative z-10 container mx-auto px-5 md:px-10">
                 <TitleHeader
                     title="My Tech Stack"
@@ -156,12 +138,7 @@ const TechStack = () => {
                 </div>
             </div>
 
-            <style>{`
-                @keyframes twinkle {
-                    0% { opacity: 0.2; }
-                    100% { opacity: 0.8; }
-                }
-            `}</style>
+           
         </div>
     );
 };

@@ -45,23 +45,7 @@ const FeatureCard = () => {
 
   return (
     <div id="features" className="relative section-padding overflow-hidden">
-      {/* Starry background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: Math.random() * 0.8 + 0.2,
-              animation: `twinkle ${Math.random() * 5 + 3}s infinite alternate`,
-            }}
-          />
-        ))}
-      </div>
+     
 
       <div className="relative z-10 container mx-auto px-5 md:px-10">
         <TitleHeader
@@ -93,12 +77,7 @@ const FeatureCard = () => {
         </div>
       </div>
 
-      <style>{`
-        @keyframes twinkle {
-          0% { opacity: 0.2; }
-          100% { opacity: 1; }
-        }
-      `}</style>
+     
     </div>
   );
 };
