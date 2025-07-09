@@ -72,7 +72,7 @@ const Hero = ({ contactRef, showcaseRef }) => {
       });
     };
 
-    // animateText();
+    animateText();
 
     // Image entrance animation
     gsap.fromTo(
