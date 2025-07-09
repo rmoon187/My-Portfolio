@@ -69,11 +69,7 @@ const Showcase = () => {
   }, []);
 
   return (
-    <section
-      id="work"
-      className="w-full py-20 px-5 md:px-10 lg:px-20"
-      
-    >
+    <section id="work" className="w-full py-20 px-5 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto" ref={containerRef}>
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-white text-center">
           Featured{" "}
@@ -92,7 +88,7 @@ const Showcase = () => {
               <div className="lg:w-1/2">
                 <div className="project-image overflow-hidden rounded-xl shadow-2xl transition-transform duration-500 group-hover:shadow-blue-500/30">
                   <img
-                    src="/images/project1.png"
+                    src="/images/p1.png"
                     alt="Ryde App"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -109,7 +105,9 @@ const Showcase = () => {
                   RecomHub – Product Recommendation Platform
                 </h3>
                 <p className="text-gray-300 mb-6 text-lg">
-                 RecomHub is a responsive web platform that allows users to post product queries, recommend alternatives, and engage in discussions with secure authentication. 
+                  RecomHub is a responsive web platform that allows users to
+                  post product queries, recommend alternatives, and engage in
+                  discussions with secure authentication.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
@@ -122,15 +120,27 @@ const Showcase = () => {
                     TailwindCSS
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    Firebase
+                    JWT
                   </span>
                 </div>
                 <div className="flex gap-4">
                   <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all">
-                   <a href="https://fir-first-p.web.app/" target="_blank" rel="noopener noreferrer" >View Project</a>
+                    <a
+                      href="https://fir-first-p.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project
+                    </a>
                   </button>
                   <button className="px-6 py-3 border border-gray-700 rounded-lg text-white font-medium hover:bg-gray-800 transition-all">
-                    <a href="https://github.com/rmoon187/ass-11-client" target="_blank" rel="noopener noreferrer">Source Code</a>
+                    <a
+                      href="https://github.com/rmoon187/ass-11-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source Code
+                    </a>
                   </button>
                 </div>
               </div>
@@ -146,7 +156,7 @@ const Showcase = () => {
               <div className="lg:w-1/2">
                 <div className="project-image overflow-hidden rounded-xl shadow-2xl transition-transform duration-500 group-hover:shadow-purple-500/30">
                   <img
-                    src="/images/project2.png"
+                    src="/images/p2.png"
                     alt="Library Management"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -156,37 +166,49 @@ const Showcase = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-4 h-4 rounded-full bg-purple-500"></span>
                   <span className="text-sm font-medium text-purple-400">
-                    WEB PLATFORM
+                    SPORTS E-COMMERCE
                   </span>
                 </div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  Library Management System
+                  Athletix - Your Ultimate Sports Equipment Store
                 </h3>
                 <p className="text-gray-300 mb-6 text-lg">
-                  A comprehensive digital solution for library administration
-                  with inventory management, member tracking, and analytics
-                  dashboard.
+                  A responsive e-commerce platform where users can browse,
+                  manage, and purchase sports gear with secure authentication
+                  and a smooth UI.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    React
+                    Express
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    Node.js
+                    Firebase
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
                     MongoDB
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    GraphQL
+                    React
                   </span>
                 </div>
                 <div className="flex gap-4">
                   <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
-                    <a href="https://ass-10-sol.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a
+                      href="https://ass-10-sol.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project
+                    </a>
                   </button>
                   <button className="px-6 py-3 border border-gray-700 rounded-lg text-white font-medium hover:bg-gray-800 transition-all">
-                    <a href="https://github.com/rmoon187/a-10-client" target="_blank" rel="noopener noreferrer">Source Code</a>
+                    <a
+                      href="https://github.com/rmoon187/a-10-client"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source Code
+                    </a>
                   </button>
                 </div>
               </div>
@@ -202,7 +224,7 @@ const Showcase = () => {
               <div className="lg:w-1/2">
                 <div className="project-image overflow-hidden rounded-xl shadow-2xl transition-transform duration-500 group-hover:shadow-pink-500/30">
                   <img
-                    src="/images/project3.png"
+                    src="/images/p32.png"
                     alt="YC Directory"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -216,33 +238,43 @@ const Showcase = () => {
                   </span>
                 </div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  YC Directory - Startup Showcase
+                  Cricket Crazy
                 </h3>
                 <p className="text-gray-300 mb-6 text-lg">
-                  A curated directory of Y Combinator startups with advanced
-                  search, filtering, and analytics features for investors and
-                  entrepreneurs.
+                 Cricket Crazy is a React app where users build their Dream 11 team by buying international players with in-app coins. It features a modern Tailwind CSS UI, squad management, free credit claims, and real-time feedback via React Toastify.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    Next.js
+                   PropTypes
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    TypeScript
+                    React Toastify
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    Supabase
+                   Vite
                   </span>
                   <span className="tech-btn px-4 py-2 bg-gray-800 rounded-full text-white text-sm font-medium">
-                    Framer Motion
+                    Tailwind CSS
                   </span>
                 </div>
                 <div className="flex gap-4">
                   <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-pink-500/30 transition-all">
-                    <a href="https://assignment-09-7dcc7.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a
+                      href="https://level-apple.surge.sh/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project
+                    </a>
                   </button>
                   <button className="px-6 py-3 border border-gray-700 rounded-lg text-white font-medium hover:bg-gray-800 transition-all">
-                   <a href="https://github.com/rmoon187/ass-09-sol" target="_blank" rel="noopener noreferrer">Source Code</a>
+                    <a
+                      href="https://github.com/rmoon187/ass-07-sol"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source Code
+                    </a>
                   </button>
                 </div>
               </div>

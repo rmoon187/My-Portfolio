@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import img from "../assets/hero.png";
 import "./styles/hero.css"; // Create this CSS file for additional styles
+import { details } from "../constants";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -24,16 +25,7 @@ const Hero = ({ contactRef, showcaseRef }) => {
       { duration: 1.5, opacity: 1, y: 0, ease: "power3.out" }
     );
 
-    // Rotating details text with cursor
-    const details = [
-      "MERN Stack Developer",
-      "Full Stack Engineer",
-      "React Specialist",
-      "Node.js Backend Developer",
-      "MongoDB Expert",
-      "JavaScript Enthusiast",
-    ];
-
+    
     let currentIndex = 0;
 
     const animateText = () => {
@@ -80,7 +72,7 @@ const Hero = ({ contactRef, showcaseRef }) => {
       });
     };
 
-    animateText();
+    // animateText();
 
     // Image entrance animation
     gsap.fromTo(
@@ -113,28 +105,6 @@ const Hero = ({ contactRef, showcaseRef }) => {
       ease: "sine.inOut",
     });
 
-    // Particle animation
-    const particles = document.querySelectorAll(".particle");
-    particles.forEach((particle) => {
-      const size = Math.random() * 10 + 5;
-      const duration = Math.random() * 4 + 3;
-
-      gsap.set(particle, {
-        width: size,
-        height: size,
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-      });
-
-      gsap.to(particle, {
-        x: "+=100",
-        y: "+=50",
-        duration: duration,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-    });
   }, []);
 
   return (
@@ -145,12 +115,6 @@ const Hero = ({ contactRef, showcaseRef }) => {
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="particle absolute rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-10 blur-sm"
-          />
-        ))}
         <div className="hero-bg-element absolute top-20 left-20 w-64 h-64 bg-purple-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="hero-bg-element absolute bottom-20 right-20 w-72 h-72 bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="hero-bg-element absolute top-1/2 left-1/4 w-96 h-96 bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
@@ -171,14 +135,14 @@ const Hero = ({ contactRef, showcaseRef }) => {
                 Rabiul Hasan Moon
               </h1>
               <div className="flex items-center">
-                {/* <div 
+                <div 
                   ref={detailsRef} 
                   className="text-2xl md:text-3xl font-mono font-semibold text-gray-300 h-8"
-                ></div> */}
-                {/* <span 
+                ></div>
+                <span 
                   ref={cursorRef}
                   className="ml-1 w-2 h-8 bg-purple-400 inline-block"
-                ></span> */}
+                ></span>
               </div>
             </div>
 

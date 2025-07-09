@@ -1,3 +1,5 @@
+import { Linkedin, Github, Twitter } from 'lucide-react';
+
 const navLinks = [
     {
         name: "Work",
@@ -249,29 +251,33 @@ const testimonials = [
 ];
 
 const socialImgs = [
-   
     {
         name: "github",
         url: "https://github.com/rmoon187",
-        imgPath: "/images/logos/github.png",
-    },
-    {
-        name: "discord",
-        url: "https://discord.com/channels/@me",
-        imgPath: "/images/logos/dis.png",
+        icon: Github 
     },
     {
         name: "x",
         url: "https://x.com/RabiulH87236764",
-        imgPath: "/images/x.png",
+        icon: Twitter,
     },
     {
         name: "linkedin",
         url: "https://www.linkedin.com/in/rabiul-hasan-624a35217/",
-        imgPath: "/images/linkedin.png",
+        icon: Linkedin
     },
+    
 ];
 
+// Rotating details text with cursor
+    const details = [
+      "MERN Stack Developer",
+      "Full Stack Engineer",
+      "React Specialist",
+      "Node.js Backend Developer",
+      "MongoDB Expert",
+      "Tailwind Specialist",
+    ];
 
 export {
     words,
@@ -285,4 +291,5 @@ export {
     techStackIcons,
     techStackImgs,
     navLinks,
+    details
 };
