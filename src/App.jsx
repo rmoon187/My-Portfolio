@@ -33,7 +33,6 @@ function App() {
         <Contact />
       </div>
       <Footer/>
-      {/* Add other components here */}
     </div>
   </div>
   );
