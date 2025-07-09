@@ -18,7 +18,7 @@ body {
 }
 
 section {
-  background: var(--cosmic-gradient);
+  /* background: var(--cosmic-gradient); */
   background-attachment: fixed;
   position: relative;
   z-index: 1;
@@ -330,7 +330,7 @@ canvas{
       @apply flex items-center justify-center gap-5;
 
       .icon {
-        @apply   flex justify-center items-center  size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+        @apply   flex justify-center items-center  size-10 md:size-12 cursor-pointer transition-all duration-500
       }
 
       img {
